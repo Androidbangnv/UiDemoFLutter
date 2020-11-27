@@ -66,7 +66,7 @@ class AppDio {
     }
   }
 
-  Future<Response<dynamic>> sendGetRequest(String apiPath, Map<String, dynamic> param,{bool hasToken : false}) async {
+  Future<Response<dynamic>> sendGetRequest(String apiPath, {Map<String, dynamic> param,bool hasToken : false}) async {
     try {
       print("------- Request api: $apiPath-------");
       Map<String, dynamic> params = param;

@@ -3,11 +3,19 @@ library flutter_package_test;
 class APICons {
   static String baseURL = "https://api.androidhive.info/volley/";
   static String PERSON_ARRAY = "person_array.json";
+  static String PERSON_OBJECT = "person_object.json";
   static String STRING_RESPONSE = "string_response.html";
 
+
+  /// post method
   ///  params.put("name", "Androidhive");
   ///                 params.put("email", "abc@androidhive.info");
   ///                 params.put("password", "password123");
+
+
+
+  /// get method
+  ///
 }
 
 class APIParams {

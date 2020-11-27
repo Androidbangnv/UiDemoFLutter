@@ -23,7 +23,6 @@ dev_dependencies:
     sdk: flutter
 
   build_runner: ^1.10.3
-
   #https://medium.com/flutter-community/generate-the-code-to-parse-your-json-in-flutter-c68aa89a81d9
   json_serializable: ^3.3.0
 

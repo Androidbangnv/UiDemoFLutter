@@ -1,7 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_package_test/f.dart';
+import 'package:flutter_package_test/api_webserver.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ui_demo_1/model/message_model.dart';
 import 'package:ui_demo_1/screen/ChatScreen.dart';
@@ -20,10 +20,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context,
-        designSize: Size(750, 1334), allowFontScaling: false);
+    ScreenUtil.init(context, designSize: Size(750, 1334), allowFontScaling: false);
+
+    ApiWebserver apiWebserver = new ApiWebserver();
+   // apiWebserver.testGetMethod();
 
     return MaterialApp(
+
       locale: DevicePreview.locale(context),
       // Add the locale here
       builder: DevicePreview.appBuilder,
@@ -52,9 +55,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-
-    Calculator2 calculator = new Calculator2();
-
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
