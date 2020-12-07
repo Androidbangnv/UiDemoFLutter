@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
     ScreenUtil.init(context, designSize: Size(750, 1334), allowFontScaling: false);
 
     ApiWebserver apiWebserver = new ApiWebserver();
-   // apiWebserver.testGetMethod();
+    apiWebserver.testGetListMethod();
 
     return MaterialApp(
 
