@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ui_demo_1/preferences/share_preference_key.dart';
+import 'package:ui_demo_1/preferences/sharepreference_manager.dart';
 import 'package:ui_demo_1/test_bloc/setting_bloc.dart';
 
 void main() =>
@@ -15,6 +17,7 @@ class TestBloc extends StatefulWidget {
 class _TestBlocState extends State<TestBloc> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text('hello'),

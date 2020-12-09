@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:ui_demo_1/model/message_model.dart';
 import 'package:ui_demo_1/model/user_model.dart';
 
+/**
+ * https://www.jetbrains.com/help/phpstorm/tutorial-creating-live-templates.html#creating-a-controller-class-live-template
+ */
+
 class ChatScreen extends StatefulWidget {
   final User user;
 

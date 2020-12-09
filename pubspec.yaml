@@ -29,6 +29,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   device_preview: ^0.5.5
   flutter_screenutil: ^3.1.0
+  shared_preferences: ^0.5.12+4
   flutter_package_test:
     path: packages/flutter_package_test
 
