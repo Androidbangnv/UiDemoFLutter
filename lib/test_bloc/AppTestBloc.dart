@@ -1,33 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ui_demo_1/preferences/share_preference_key.dart';
-import 'package:ui_demo_1/preferences/sharepreference_manager.dart';
-import 'package:ui_demo_1/test_bloc/setting_bloc.dart';
+import 'package:get/get.dart';
+import 'package:ui_demo_1/test_bloc/ContrllerGet.dart';
 
-void main() =>
-    runApp(MaterialApp(
+void main() => runApp(GetMaterialApp(
       home: TestBloc(),
     ));
 
-class TestBloc extends StatefulWidget {
-  @override
-  _TestBlocState createState() => _TestBlocState();
-}
-
-class _TestBlocState extends State<TestBloc> {
+class TestBloc extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // Instantiate your class using Get.put() to make it available for all "child" routes there.
+    final Controller c = Get.put(Controller());
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('hello'),
-      ),
-      body: BlocProvider<SettingBloc>(
-        create: (context) {
-          return SettingBloc();
-        },
-        child: Text('bangnv'),
-      ),
-    );
+        appBar: AppBar(
+          title: Obx(() => Text("click : ${c.count}")),
+        ),
+        body: Center(
+            child: RaisedButton(
+                child: Text("Go to Other"), onPressed: () => Get.to(Other()))),
+        floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.add), onPressed: c.increment));
+  }
+}
+
+class Other extends StatelessWidget {
+  // You can ask Get to find a Controller that is being used by another page and redirect you to it.
+  final Controller c = Get.find();
+
+  @override
+  Widget build(context) {
+    // Access the updated count variable
+    return Scaffold(body: Center(child: Text("${c.count}")));
   }
 }
